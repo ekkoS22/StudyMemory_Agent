@@ -108,7 +108,7 @@ Because that’s what actually shows up on exams.
 
 <br><br><br><br><br><br>
 --------------------------------------------- 中文分割线：以下是中文说明 ----------------------------------------------
-<br><br><br><br>
+<br><br>
 
 重要！！：
 本项目使用 VSCode 内部插件 'Markdown+Math'，查看答案时请使用   'ctrl+Shift+V'    以查看数学公式形式
