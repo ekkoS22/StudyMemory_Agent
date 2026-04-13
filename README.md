@@ -1,164 +1,109 @@
 ﻿
 # StudyMemory Agent ⭐
+> You didn’t forget the material.  
+> You lost access to it.
 
-Important:
+---
 
-This project uses the VS Code extension `Markdown+Math`. When viewing answer files, press `Ctrl+Shift+V` to open Markdown Preview and render math formulas.
+## The Problem
 
-This is a minimal course-question archive project.
+You asked hundreds of questions this semester.
 
-Its goal is not to build a complex knowledge base. Instead, every time you send a problem to Codex, Codex should:
+- You understood them.
+- You moved on.
+- You forgot them.
 
-1. Identify the course
-2. Identify the topic
-3. Solve the problem
-4. Save the answer to the correct Markdown file
-5. Update `logs.md`
+Your knowledge is now buried across dozens of chat threads.
 
-## Project Structure
+When exams come:
+- You don’t know what to review
+- You don’t know what you kept getting wrong
+- You start from scratch
 
-The core structure is:
+This is not a knowledge problem.
 
-```text
-wiki/
-  <COURSE>/
-    <TOPIC>/
-      <COURSE>-<TOPIC>.md
-logs.md
-RULE.md
-RULE_CN.md
-README.md
-```
+This is a **memory system failure**.
 
-Examples:
+---
 
-```text
-wiki/ECE301/DTFT/ECE301-DTFT.md
-wiki/MA265/Markov_Matrices/MA265-Markov_Matrices.md
-wiki/MA265/Spherical_Coordinates/MA265-Spherical_Coordinates.md
-```
+## What This Project Does
 
-Problems from the same course and the same topic should be appended to the same Markdown file.
+It is not a chatbot.
 
-## Rule Files
+It is a **study memory system**.
 
-`RULE.md` is the English rule file.
+It takes your scattered learning conversations and turns them into:
 
-`RULE_CN.md` is the Chinese rule file.
+- structured knowledge
+- tracked misconceptions
+- compressed review material
+- exam-ready summaries
 
-If you ask in Chinese, Codex should read and follow `RULE_CN.md`.
+---
 
-If you ask in English, Codex should read and follow `RULE.md`.
+## Core Idea
 
-## How To Use
+> Don’t store conversations.  
+> Store what matters for review.
 
-Send Codex a screenshot or text version of a problem, for example:
+We convert raw chat into **memory units**:
 
-```text
-How do I solve this?
-```
+- concepts
+- formulas
+- problem patterns
+- misconceptions (most important)
+- summaries
 
-Codex should identify the course and topic automatically, then save the answer to a path like:
+Then we:
 
-```text
-wiki/MA265/Spherical_Coordinates/MA265-Spherical_Coordinates.md
-```
+- deduplicate  
+- prioritize  
+- compress  
 
-At the end, Codex should give you a short answer summary and the saved file path.
+So you don’t reread — you **recall**.
 
-## Current Courses
+---
 
-The project currently includes a few example files. Update the course list in `RULE.md` and `RULE_CN.md` according to the courses you are taking this semester.
+## Why This Is Different
 
-```text
-ECE301   Signals and Systems
-ECE20875 Python for Data Science
-MA265    Linear Algebra
-ECE382   Control Systems
-```
+Most tools:
+- store notes  
+- store chats  
+- store everything  
 
-## Markdown Math Format
+This system:
+- stores **only what improves future performance**
 
-This project uses Markdown+Math dollar delimiters.
+Especially:
 
-Inline math:
+> what you repeatedly get wrong
 
-```md
-$x^2+y^2=z^2$
-```
+Because that’s what actually shows up on exams.
 
-Display math:
+---
 
-```md
-$$
-F(\omega)=\frac{1}{1-\frac{3}{4}e^{-j\omega}}
-$$
-```
-
-Do not use other LaTeX delimiters.
-
-Do not leave LaTeX commands outside `$...$` or `$$...$$`.
-
-## Answer Format
-
-English answers usually use:
-
-```md
-## Q<number or short title>
-
-### Question
-
-### Solution
-
-### Topic
-
-### Trouble Spots
-```
-
-Chinese answers usually use:
-
-```md
-## Q<number or short title>
-
-### 题目
-
-### 解答
-
-### 考点
-
-### 易错点
-```
-
-## Logs
-
-Every time an answer is added or updated, `logs.md` should be updated.
-
-Recommended format:
+## Pipeline
 
 ```text
-YYYY/M/D HH:mm <COURSE>/<TOPIC>/<COURSE>-<TOPIC>.md was answered.
-```
+[ Raw Chat / Study Session ]
+            ↓
+      [ Extractor ]
+            ↓
+   [ Memory Units (structured) ]
+            ↓
+ [ Dedup + Priority Assignment ]
+            ↓
+      [ Local Storage ]
+            ↓
+   [ Review Generator ]
+            ↓
+[ Exam Sheets / Weak Points / Cram Notes ]
 
-Example:
 
-```text
-2026/4/13 00:37 MA265/Spherical_Coordinates/MA265-Spherical_Coordinates.md was updated.
-```
-
-## Encoding Note
-
-Markdown files should be saved as UTF-8.
-
-If Chinese text appears garbled in VS Code or the terminal, check the file encoding before changing the content.
-
-## Simplicity Principle
-
-This project has one job: save course-problem solutions.
-
-The ideal state is one Markdown file per topic, with questions accumulating clearly over time.
 
 
 --------------------------------------------- 中文分割线：以下是中文说明 ----------------------------------------------
+
 
 重要！！：
 本项目使用 VSCode 内部插件 'Markdown+Math'，查看答案时请使用   'ctrl+Shift+V'    以查看数学公式形式
@@ -208,7 +153,7 @@ wiki/MA265/Spherical_Coordinates/MA265-Spherical_Coordinates.md
 
 ## 使用方式
 
-直接把题目截图或文字发给 Codex，例如：
+直接把题目截图或文字在vscode内部发给 Codex，例如：
 
 ```text
 这题怎么做
