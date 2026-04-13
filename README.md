@@ -99,7 +99,7 @@ Because that’s what actually shows up on exams.
             ↓
 [ Exam Sheets / Weak Points / Cram Notes ]
 
-```text
+```
 
 
 --------------------------------------------- 中文分割线：以下是中文说明 ----------------------------------------------
