@@ -1,7 +1,8 @@
 ﻿
-# StudyMemory Agent
+# StudyMemory Agent ⭐
 
 Important:
+
 This project uses the VS Code extension `Markdown+Math`. When viewing answer files, press `Ctrl+Shift+V` to open Markdown Preview and render math formulas.
 
 This is a minimal course-question archive project.
